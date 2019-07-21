@@ -146,7 +146,12 @@ class RejseplanenCard extends HTMLElement {
       'due_in': state.attributes['due_in'],
       'direction': state.attributes['direction']
     }
-    const journeys = [next].concat(state.attributes['next_departures'])
+
+    var journeys = [next];
+    if ('next_departures' in state.attributes) {
+      journeys = journeys.concat(state.attributes['next_departures']);
+    }
+    
     for (const journey of journeys) {
       const direction = journey['direction']
       const routename = journey['route']
