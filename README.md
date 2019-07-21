@@ -59,4 +59,4 @@ Add a custom element in your `ui-lovelace.yaml`
 
 ## Credits
 
-Based on [cgtobi](https://github.com/cgtobi) and [DavidMStraub](https://github.com/DavidMStraub)'s work: https://github.com/cgtobi/rejseplanen-card
+Based on [cgtobi](https://github.com/cgtobi) and [DavidMStraub](https://github.com/DavidMStraub)'s work: https://github.com/cgtobi/rmv-card
