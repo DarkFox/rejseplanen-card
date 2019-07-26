@@ -5,6 +5,8 @@ This currently only works with my [Custom Rejseplanen](https://github.com/DarkFo
 
 I've tried to add as many styles for different transit types and routes as I could find, but please let me know if any are missing.
 
+![Example](https://raw.githubusercontent.com/DarkFox/rejseplanen-card/master/rejseplanen-card-example.png)
+
 ## Installation
 
 ### Step 1
