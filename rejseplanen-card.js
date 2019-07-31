@@ -2,11 +2,15 @@ class RejseplanenCard extends HTMLElement {
   set hass(hass) {
     const entityId = this.config.entity
     const state = hass.states[entityId]
-    const name = state.attributes['friendly_name']
+    const name = this.config.title || state.attributes['friendly_name']
 
     if (!this.content) {
       const card = document.createElement('ha-card')
-      card.header = name
+      if (name == ' ') {
+        card.header = ''
+      } else {
+        card.header = name
+      }
       this.content = document.createElement('div')
       const style = document.createElement('style')
       style.textContent = `
@@ -38,6 +42,7 @@ class RejseplanenCard extends HTMLElement {
           color: #fff;
           background-color: #888;
           margin-right:0.7em;
+          border-radius: 2px;
         }
 
         span.type-S.route-A {
@@ -54,6 +59,10 @@ class RejseplanenCard extends HTMLElement {
 
         span.type-S.route-C {
           background-color: #E59535;
+        }
+
+        span.type-S.route-E {
+          background-color: #7670B3;
         }
 
         span.type-S.route-F {
@@ -140,16 +149,17 @@ class RejseplanenCard extends HTMLElement {
     var tablehtml = `
     <table>
     `
-    const next = {
-      'route': state.attributes['route'],
-      'type': state.attributes['type'],
-      'due_in': state.attributes['due_in'],
-      'direction': state.attributes['direction']
-    }
 
-    var journeys = [next];
-    if ('next_departures' in state.attributes) {
-      journeys = journeys.concat(state.attributes['next_departures']);
+    var journeys = [];
+    if (state.state != 'unknown') {
+      const next = {
+        'route': state.attributes['route'],
+        'type': state.attributes['type'],
+        'due_in': state.attributes['due_in'],
+        'direction': state.attributes['direction']
+      }
+
+      journeys = [next].concat(state.attributes['next_departures']);
     }
     
     for (const journey of journeys) {
