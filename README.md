@@ -1,13 +1,19 @@
 # rejseplanen-card
 Lovelace card for listing departures from Rejseplanen sensors
 
-This currently only works with my [Custom Rejseplanen](https://github.com/DarkFox/custom_rejseplanen) component. When I'm happy with it, I plan to make a pull request on the built-in Rejseplanen component in HA
+This works with the [Rejseplanen sensor](https://www.home-assistant.io/components/rejseplanen/) included in Home Assistant.
 
 I've tried to add as many styles for different transit types and routes as I could find, but please let me know if any are missing.
 
 ![Example](https://raw.githubusercontent.com/DarkFox/rejseplanen-card/master/rejseplanen-card-example.png)
 
-## Installation
+# Installation
+
+## HACS
+
+Add "DarkFox/rejseplanen-card" as a custom repository with the type "plugin" in HACS Settings, then click install.
+
+## Manual installation
 
 ### Step 1
 
@@ -17,7 +23,7 @@ Install `rejseplanen-card` by copying `rejseplanen-card.js` from this repo to `<
 
 ```bash
 wget https://github.com/DarkFox/rejseplanen-card/raw/master/rejseplanen-card.js
-mv list-card.js ~/.homeassistant/www/
+mv rejseplanen-card.js ~/.homeassistant/www/
 ```
 
 ### Step 2
