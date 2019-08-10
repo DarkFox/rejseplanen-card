@@ -11,7 +11,19 @@ I've tried to add as many styles for different transit types and routes as I cou
 
 ## HACS
 
+### Step 1
+
 Add "DarkFox/rejseplanen-card" as a custom repository with the type "plugin" in HACS Settings, then click install.
+
+### Step 2
+
+Link `rejseplanen-card` inside you `ui-lovelace.yaml`.
+
+```yaml
+resources:
+  - url: /community_plugin/rejseplanen-card/rejseplanen-card.js
+    type: js
+```
 
 ## Manual installation
 
@@ -28,23 +40,6 @@ mv rejseplanen-card.js ~/.homeassistant/www/
 
 ### Step 2
 
-Set up the Rejseplanen transport sensor.
-
-**Example:**
-
-```yaml
-sensor:
-  - platform: custom_rejseplanen
-    name: S-Tog Nørreport til Høje Tåstrup
-    stop_id: '008600646'
-    route: B
-    departure_type: S
-    direction:
-      - Høje Taastrup St.
-```
-
-### Step 3
-
 Link `rejseplanen-card` inside you `ui-lovelace.yaml`.
 
 ```yaml
@@ -53,7 +48,7 @@ resources:
     type: js
 ```
 
-### Step 4
+## Configuration
 
 Add a custom element in your `ui-lovelace.yaml`
 
@@ -61,7 +56,7 @@ Add a custom element in your `ui-lovelace.yaml`
 
 ```yaml
       - type: "custom:rejseplanen-card"
-        entity: sensor.s_tog_norreport_til_brondbyoster
+        entity: sensor.rejseplanen
 ```
 
 
