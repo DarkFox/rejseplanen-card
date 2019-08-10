@@ -16,7 +16,7 @@ class RejseplanenCard extends HTMLElement {
       style.textContent = `
         table {
           width: 100%;
-          padding: 6px 14px;
+          padding: 6px 10px;
         }
         tr:nth-child(even) {
           background: var(--table-row-background-color);
@@ -92,7 +92,7 @@ class RejseplanenCard extends HTMLElement {
         span.type-REG {
           background-color: #47A541;
         }
-        
+
         span.type-IC {
           background-color: #EE4230;
         }
@@ -161,7 +161,7 @@ class RejseplanenCard extends HTMLElement {
 
       journeys = [next].concat(state.attributes['next_departures']);
     }
-    
+
     for (const journey of journeys) {
       const direction = journey['direction']
       const routename = journey['route']
