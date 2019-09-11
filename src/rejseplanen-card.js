@@ -1,18 +1,37 @@
+/*jshint esversion: 9 */
 class RejseplanenCard extends HTMLElement {
   set hass(hass) {
-    const entityId = this.config.entity
-    const state = hass.states[entityId]
-    const name = this.config.title || state.attributes['friendly_name']
+    const entityId = this.config.entity;
+    const state = hass.states[entityId];
+
+    if (state === undefined) {
+      this.innerHTML = `
+        <style>
+          .warning {
+            display: block;
+            color: black;
+            background-color: #fce588;
+            padding: 8px;
+          }
+        </style>
+        <ha-card>
+          <div class="warning">Entity not found: ${entityId} </div>
+        </ha-card>
+      `;
+      return;
+    }
+
+    const name = this.config.title || state.attributes.friendly_name;
 
     if (!this.content) {
-      const card = document.createElement('ha-card')
+      const card = document.createElement('ha-card');
       if (name == ' ') {
-        card.header = ''
+        card.header = '';
       } else {
-        card.header = name
+        card.header = name;
       }
-      this.content = document.createElement('div')
-      const style = document.createElement('style')
+      this.content = document.createElement('div');
+      const style = document.createElement('style');
       style.textContent = `
         table {
           width: 100%;
@@ -140,15 +159,15 @@ class RejseplanenCard extends HTMLElement {
         span[class*=" route-Havnebus-"] {
           background-color: #021C4C;
         }
-        `
-      card.appendChild(style)
-      card.appendChild(this.content)
-      this.appendChild(card)
+        `;
+      card.appendChild(style);
+      card.appendChild(this.content);
+      this.appendChild(card);
     }
 
     var tablehtml = `
     <table>
-    `
+    `;
 
     var journeys = [];
     if (state.state != 'unknown') {
@@ -157,19 +176,19 @@ class RejseplanenCard extends HTMLElement {
         'type': state.attributes['type'],
         'due_in': state.attributes['due_in'],
         'direction': state.attributes['direction']
-      }
+      };
 
       journeys = [next].concat(state.attributes['next_departures']);
     }
 
     for (const journey of journeys) {
-      const direction = journey['direction']
-      const routename = journey['route']
-      const type = journey['type']
-      const time = journey['due_in']
+      const direction = journey['direction'];
+      const routename = journey['route'];
+      const type = journey['type'];
+      const time = journey['due_in'];
 
-      const styleType = type.replace(' ', '-')
-      const styleRoutename = routename.replace(' ', '-')
+      const styleType = type.replace(' ', '-');
+      const styleRoutename = routename.replace(' ', '-');
 
       tablehtml += `
           <tr>
@@ -177,25 +196,25 @@ class RejseplanenCard extends HTMLElement {
             <td class="expand">${direction}</td>
             <td class="shrink" style="text-align:right;">${time}</td>
           </tr>
-      `
+      `;
     }
     tablehtml += `
     </table>
-    `
+    `;
 
-    this.content.innerHTML = tablehtml
+    this.content.innerHTML = tablehtml;
   }
 
   setConfig(config) {
     if (!config.entity) {
-      throw new Error('You need to define an entity')
+      throw new Error('You need to define an entity');
     }
-    this.config = config
+    this.config = config;
   }
 
   getCardSize() {
-    return 1
+    return 1;
   }
 }
 
-customElements.define('rejseplanen-card', RejseplanenCard)
+customElements.define('rejseplanen-card', RejseplanenCard);
