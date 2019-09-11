@@ -2,6 +2,8 @@
 class RejseplanenCard extends HTMLElement {
   set hass(hass) {
     const entityId = this.config.entity;
+    const max_entries = this.config.max_entries;
+
     const state = hass.states[entityId];
 
     if (state === undefined) {
@@ -179,6 +181,10 @@ class RejseplanenCard extends HTMLElement {
       };
 
       journeys = [next].concat(state.attributes['next_departures']);
+    }
+
+    if (max_entries) {
+      journeys = journeys.slice(0, max_entries);
     }
 
     for (const journey of journeys) {
