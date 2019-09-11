@@ -57,6 +57,7 @@ Add a custom element in your `ui-lovelace.yaml`
 ```yaml
       - type: "custom:rejseplanen-card"
         entity: sensor.rejseplanen
+        max_entries: 5 # Optional
 ```
 
 
