@@ -13,11 +13,11 @@ I've tried to add as many styles for different transit types and routes as I cou
 
 ### Step 1
 
-Add "DarkFox/rejseplanen-card" as a custom repository with the type "plugin" in HACS Settings, then click install.
+Search for `Rejseplanen Card` in the "Frontend" tab, then click install.
 
 ### Step 2
 
-Link `rejseplanen-card` inside you `ui-lovelace.yaml`.
+Link `rejseplanen-card` inside your configuration.
 
 ```yaml
 resources:
@@ -40,7 +40,7 @@ mv rejseplanen-card.js ~/.homeassistant/www/
 
 ### Step 2
 
-Link `rejseplanen-card` inside you `ui-lovelace.yaml`.
+Link `rejseplanen-card` inside your configuration.
 
 ```yaml
 resources:
@@ -52,11 +52,20 @@ resources:
 
 Add a custom element in your `ui-lovelace.yaml`
 
+|         Name        |  Type   |    Default   |     Supported options     | Description |
+| ------------------- | ------- | ------------ | ------------------------- | ----------- |
+| type                | string  | **Required** | `custom:rejseplanen-card` | Type of the card |
+| entity              | string  | **Required** | `sensor.rejseplanen`      | entity_id |
+| show_scheduled_time | boolean | `false`      | `true`|`false`            | Show the scheduled departure time instead of a countdown in minutes |
+| max_entries         | number  | optional     | any number                | Limit number of departures shown |
+
+
 **Example:**
 
 ```yaml
-      - type: "custom:rejseplanen-card"
+      - type: custom:rejseplanen-card
         entity: sensor.rejseplanen
+        show_scheduled_time: true # Optional
         max_entries: 5 # Optional
 ```
 
