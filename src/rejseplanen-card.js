@@ -207,7 +207,7 @@ class RejseplanenCard extends HTMLElement {
 
       let trackSnippet = '';
       if (track) {
-        trackSnippet = `<span class="track">(Spor ${track})</span>`;
+        trackSnippet = `<span class="track">Spor ${track}</span>`;
       }
 
       let delaySnippet = '';
