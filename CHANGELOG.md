@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.0]
+### Added
+- Added `show_scheduled_time` option to show the scheduled departure time, instead of a countdown.
+
+### Other
+- Removed parenthesis around track.
+- Updated Readme with configuration options table and correct HACS install process.
+
 ## [1.4.0]
 ### Added
 - Track number, if available (HA 0.115 and above only).
