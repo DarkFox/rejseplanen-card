@@ -7,6 +7,15 @@ I've tried to add as many styles for different transit types and routes as I cou
 
 ![Example](https://raw.githubusercontent.com/DarkFox/rejseplanen-card/master/rejseplanen-card-example.png)
 
+### Setup
+
+Link `rejseplanen-card` inside your configuration:
+
+```yaml
+resources:
+  - url: /hacsfiles/rejseplanen-card/rejseplanen-card.js
+    type: js
+```
 ## Configuration
 
 Add a custom element in your `ui-lovelace.yaml`

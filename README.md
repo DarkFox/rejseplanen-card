@@ -17,11 +17,11 @@ Search for `Rejseplanen Card` in the "Frontend" tab, then click install.
 
 ### Step 2
 
-Link `rejseplanen-card` inside your configuration.
+Link `rejseplanen-card` inside your configuration:
 
 ```yaml
 resources:
-  - url: /community_plugin/rejseplanen-card/rejseplanen-card.js
+  - url: /hacsfiles/rejseplanen-card/rejseplanen-card.js
     type: js
 ```
 
