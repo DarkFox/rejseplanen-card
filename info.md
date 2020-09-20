@@ -13,8 +13,8 @@ Link `rejseplanen-card` inside your configuration:
 
 ```yaml
 resources:
-  - url: /hacsfiles/rejseplanen-card/rejseplanen-card.js
-    type: js
+  url: /hacsfiles/rejseplanen-card/rejseplanen-card.js
+  type: js
 ```
 ## Configuration
 

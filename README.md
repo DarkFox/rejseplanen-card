@@ -21,8 +21,8 @@ Link `rejseplanen-card` inside your configuration:
 
 ```yaml
 resources:
-  - url: /hacsfiles/rejseplanen-card/rejseplanen-card.js
-    type: js
+  url: /hacsfiles/rejseplanen-card/rejseplanen-card.js
+  type: js
 ```
 
 ## Manual installation
@@ -44,8 +44,8 @@ Link `rejseplanen-card` inside your configuration.
 
 ```yaml
 resources:
-  - url: /local/rejseplanen-card.js?v=0
-    type: js
+  url: /local/rejseplanen-card.js?v=0
+  type: js
 ```
 
 ## Configuration
