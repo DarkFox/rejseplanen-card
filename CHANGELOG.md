@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.5.1]
+### Fixed
+- CSS fix (#8) by @DurgNomis-drol
+
 ## [1.5.0]
 ### Added
 - Added `show_scheduled_time` option to show the scheduled departure time, instead of a countdown.
