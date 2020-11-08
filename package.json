@@ -1,6 +1,6 @@
 {
     "name": "rejseplanen-card",
-    "version": "1.5.0",
+    "version": "1.5.1",
     "description": "Lovelace rejseplanen-card",
     "keywords": [
         "home-assistant",
@@ -27,7 +27,7 @@
         "rollup": "^1.2.3",
         "rollup-plugin-babel": "^4.3.2",
         "rollup-plugin-node-resolve": "^4.0.1",
-        "rollup-plugin-terser": "^4.0.4",
+        "rollup-plugin-terser": "^7.0.2",
         "rollup-plugin-uglify": "^6.0.2"
     },
     "scripts": {
