@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.5.1]
+## [1.5.3]
 ### Fixed
 - CSS fix (#8) by @DurgNomis-drol
 
