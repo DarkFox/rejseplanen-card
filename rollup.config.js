@@ -6,7 +6,7 @@ export default {
   input: ['src/rejseplanen-card.js'],
   output: {
     dir: './dist',
-    format: 'es',
+    format: 'iife',
   },
   plugins: [
     resolve(),
