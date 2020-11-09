@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.5.4]
+### Fixed
+- Switch to iife minimizer to avoid class name clashing.
+
 ## [1.5.3]
 ### Fixed
 - CSS fix (#8) by @DurgNomis-drol
